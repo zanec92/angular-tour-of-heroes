@@ -29,6 +29,7 @@ export class HeroSearchComponent implements OnInit {
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) => this.heroService.searchHeroes(term)),
+
     );
   }
 

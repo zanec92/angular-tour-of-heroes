@@ -55,7 +55,7 @@ export class HeroService {
     if (!term.trim()) {
       return of([]);
     }
-    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}}`).pipe(
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
       tap(_ => this.log(`found heroes matching "${term}"`)),
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
@@ -63,7 +63,7 @@ export class HeroService {
   
   addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+      tap((newHero: Hero) => this.log(`added hero ${hero.name} id=${newHero.id}`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }
