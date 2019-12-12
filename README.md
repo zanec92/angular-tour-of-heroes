@@ -1,27 +1,43 @@
-# AngularTourOfHeroes
+# Tour Of Heroes App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+Курс по Angular "Tour Of Heroes App"(https://angular.io/tutorial). Редактор героев.
 
-## Development server
+## Установка и запуск приложения
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Для установки и запуска проекта нужно выполнить следующие команды в корневой директории проекта:
 
-## Code scaffolding
+> **npm install**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> **ng serve** (не закрывать окно с данной командой)
 
-## Build
+После этого проект будет доступен по адресу http://localhost:4200.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Функционал и возможности приложения
 
-## Running unit tests
+### **Вывод списка героев**
+Вывод списка героев осуществлен на странице http://localhost:4200/heroes.
+Имеется панель навигации, а также компонент логов "Messages".
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Вывод списка героев](https://github.com/zanec92/angular-tour-of-heroes/blob/master/README_images/screenshot2.png)
 
-## Running end-to-end tests
+### **Добавление новых героев**
+Добавление новых героев доступно по адресу http://localhost:4200/heroes.
+При нажатии на кнопку "Add" идет post-запрос к In-Memory Web Api для добавления героя во временное хранилище.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Добавление новых героев](https://github.com/zanec92/angular-tour-of-heroes/blob/master/README_images/screenshot3.png)
 
-## Further help
+### **Поиск героев**
+Поиск героев доступен на странице http://localhost:4200/dashboard.
+Поиск выполняется после ввода нового символа в поле "Hero Search". Запрос осуществляется после 300ms с события ввода нового символа. Дублированные запросы не выполняются.
+![Поиск героев](https://github.com/zanec92/angular-tour-of-heroes/blob/master/README_images/screenshot4.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### **Псевдотоп**
+Псевдотоп создан при помощи простого slice() массива с героями. Добавлен просто для ознакомления с Angular.
+![Псевдотоп](https://github.com/zanec92/angular-tour-of-heroes/blob/master/README_images/screenshot1.png)
+
+
+### **Также**
+- Удаление героев
+- Редирект с главной страницы на Dashboard
+- Асинхронные запросы к In-Memory Web Api(https://github.com/angular/in-memory-web-api).
+
